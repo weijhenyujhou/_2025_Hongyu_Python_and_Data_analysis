@@ -24,10 +24,10 @@
 # else :
 #     print('模式輸入錯誤請重新輸入')
 
-n = float(input('請輸入數值'))
-m = input('模式確認：Oz轉ml請輸入"1",ml轉Oz請輸入“2”')
+n = float(input('請輸入轉換數值'))
+m = input('模式確認：Oz單位轉換成ml請輸入“1”,ml單位轉換成Oz請輸入“2”')
 exc = 29.57
-if  m =='1':
+if  m == '1':
 
     result = round(n*exc,2)
     print(f"輸入Oz:{m} 轉換成ml為:{result}")
