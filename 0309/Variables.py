@@ -10,11 +10,11 @@ Female = False  #bool
 print(name,age,weight,Female)
 
 #型別轉換
-
-#x = int(input('請輸入第一個數值'))
-#y = int(input('請輸入第二個數值'))
-
-#print(x+y)
+'''
+x = int(input('請輸入第一個數值'))
+y = int(input('請輸入第二個數值'))
+print(x+y)
+'''
 
 a = '100'
 print(int(a))
