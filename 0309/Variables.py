@@ -19,7 +19,10 @@ print(name,age,weight,Female)
 a = '100'
 print(int(a))
 print(float(a))
+print(bool(a))
 
-b =3.5
+b = 3.6
 print(int(b))
 print(str(b))
+print(bool(b))
+print(bool(int(a)<int(b)))
