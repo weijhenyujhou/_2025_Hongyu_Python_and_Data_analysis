@@ -13,3 +13,4 @@ print(math.ceil(x)) # 無條件進位
 print(abs(x)) #絕對值
 print(round(x)) # 四捨五入
 print(pow(x,3)) #x 3次方
+print(math.cos(45))
