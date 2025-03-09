@@ -16,6 +16,7 @@ y = int(input('請輸入第二個數值'))
 print(x+y)
 """
 
+
 a = '100'
 print(int(a))
 print(float(a))

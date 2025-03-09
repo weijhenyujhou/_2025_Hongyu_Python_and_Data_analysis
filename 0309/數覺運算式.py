@@ -1,5 +1,8 @@
 #
 import math
+from contextlib import nullcontext
+from time import process_time_ns
+
 x = 3.6
 y = -34
 # print(round(x))
@@ -30,7 +33,24 @@ print(a - b)
 print(a * b)
 print(a / b)
 print(a % b)
-# 比較
+# 比較 ==, !=. >, >=, <, <=
+print( a == b)
+print( a != b)
+print(a > b)
+print(a >= 0)
+print(b < 0)
+print( b <= 0)
+
+# not 以下Python特殊邏輯
+print('=====邏輯運算======')
+v = 0
+print(not v)
+v = None
+print(not v)
+v = [ ]
+print(not v)
+v = ""
+print(not v)
 
 # 指定
 print('運算錢未指定A前',a)
