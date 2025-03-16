@@ -27,7 +27,7 @@ print('========')
 while l1:
     print(l1.pop(0))
 # print(l1) 列出l1 list
-print('======分隔線======')
+print('======分隔線-1======')
 l1=['apple',123,0.98,True,True,'banana',123]
 # len()
 print(len(l1))
@@ -44,7 +44,7 @@ l1.extend(['python']) # 中括號內的會直接放入
 l1.extend('python') # 無加括號的會將引號內的可迭代的資料型態拆開放入串列中
 print(l1)
 
-print('================')
+print('========分隔線-2========')
 l1=['apple',123,0.98,True,True,'banana',123]
 #insert()
 l1.insert(2,'python')#index(索引, 插入數值)
@@ -61,4 +61,11 @@ print(l1)
 l1.clear() # 清空串列內所有值
 print(l1)
 
+#sort()
+l2 = [1,6,2,8,4]
+l3 = ['2','5','1','3']
+l4 = [1.2,9,5.2]
+l4.sort() #升幕排列
+l2.sort(reverse=True) #降幕排列
 
+print(l2,l4)
