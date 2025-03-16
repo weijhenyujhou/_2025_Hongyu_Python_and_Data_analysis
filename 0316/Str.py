@@ -8,7 +8,7 @@
 %o=8進位
 %f=float (Python最初顯示方式）
 '''
-
+from time import process_time_ns
 
 a = 'Hello %s' # % + s 表示顯示時後面要插入的數值型態 s=str d=int(10進位Decimal） f=float (Python最初顯示方式）
 b = 'Hello %d'
@@ -21,7 +21,7 @@ print(c % 123.4)
 print(d % 17)
 
 
-e = 'Hello %10s' # % + s 表示顯示時後面要插入的數值型態 s=str d=int(10進位Decimal） f=float (Python最初顯示方式）
+e = '靠右對齊 Hello %+10s' # % + s 表示顯示時後面要插入的數值型態 s=str d=int(10進位Decimal） f=float (Python最初顯示方式）
 f = 'Hello %d'
 g = 'Hello %.3f'
 h = 'Hello %x'
@@ -38,8 +38,23 @@ print(f"Hello {my_name:*^10}")
 
 
 #Practic
+msg = "1.百分比_顯示_Hello %s ! 今日天氣溫度 %f"
 
-msg = 'Hello %s ! 今日天氣溫度 %.1f'
 
 print(msg %('John',23))
+
+# format()
+msg_1='Hello {:*^10s} ! 今日溫度 {:.1f}'
+msg_2=('11的8進位{:o}, 及6進位{:x}')
+print(msg_1.format('John',23))
+print(msg_2.format(11,11))
+
+msg_3 = '2.format方式 Hello {name:=^10s} ! 今日天氣溫度 {deg:.2f}'
+print(msg_3.format(name ='John',deg=23))
+
+
+# f-string
+name = 'John'
+deg =23
+print(f'3.f-string方式 Hello {name:=^10s} ! 今日天氣溫度 {deg:.2f}')
 
