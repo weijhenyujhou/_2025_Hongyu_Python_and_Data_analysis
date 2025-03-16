@@ -44,6 +44,21 @@ l1.extend(['python']) # 中括號內的會直接放入
 l1.extend('python') # 無加括號的會將引號內的可迭代的資料型態拆開放入串列中
 print(l1)
 
+print('================')
+l1=['apple',123,0.98,True,True,'banana',123]
+#insert()
+l1.insert(2,'python')#index(索引, 插入數值)
+print(l1)
+#remove()
+l1.remove(123) # 刪除值為123的
+print(l1)
+#pop()
+l1.pop(2) #刪除index為2的0.98
+print(l1)
+#sort()
 
+#clear()
+l1.clear() # 清空串列內所有值
+print(l1)
 
 
