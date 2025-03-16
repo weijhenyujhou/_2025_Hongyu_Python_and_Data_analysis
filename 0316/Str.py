@@ -85,34 +85,43 @@ print(s[:-1])# 起始未設定,# 倒數最後一個不顯示
 print(s[-5:-1]) # 由字串後取得子字串，起始值終止值都要是負數，而起始值要比終止值小
 
 # 定義字串變數
-s = 'hello'
-
+s = 'hello world'
+print(f'String Method 舉例說明以下方法:{s}')
 # len() - 取得字串長度
-print(len(s))  # 輸出: 5
+print('1. len() - 取得字串長度',len(s))  # 輸出: 5
 
 # count() - 計算特定字元在字串中出現的次數
-print(s.count("l"))  # 輸出: 2
+print('2. count() - 計算特定字元在字串中出現的次數',s.count("l"))  # 輸出: 2
 
-# index() - 找出特定字元的索引位置（從0開始計算）
-print(s.index("o"))  # 輸出: 4
+# index() - 找出特定字元的索引位置（從0開始計算）找不到回報錯誤
+print('3. index() - 找出特定字元的索引位置（從0開始計算）找不到回報錯誤',s.index("o"))  # 輸出: 4
+# find() 找不到回傳-1
+print('4. find() 找不到回傳-1',s.find("o"))
 
 # isdigit() - 檢查字串是否只包含數字
-print(s.isdigit())  # 輸出: False，因為 "hello" 不是數字
+print('5. isdigit() - 檢查字串是否只包含數字',s.isdigit())  # 輸出: False，因為 "hello" 不是數字
 
 # isalpha() - 檢查字串是否只包含字母（不包含空格、數字或符號）
-print(s.isalpha())  # 輸出: True，因為 "hello" 只包含字母
+print('6. isalpha() - 檢查字串是否只包含字母（不包含空格、數字或符號）',s.isalpha())  # 輸出: True，因為 "hello" 只包含字母
 
 # endswith() - 檢查字串是否以指定的字元結尾
-print(s.endswith("o"))  # 輸出: True，"hello" 以 "o" 結尾
+print('7. endswith() - 檢查字串是否以指定的字元結尾',s.endswith("o"))  # 輸出: True，"hello" 以 "o" 結尾
 
 # startswith() - 檢查字串是否以指定的字元開頭
-print(s.startswith("h"))  # 輸出: True，"hello" 以 "h" 開頭
+print('8. startswith() - 檢查字串是否以指定的字元開頭',s.startswith("h"))  # 輸出: True，"hello" 以 "h" 開頭
 
 # upper() - 將字串轉換成大寫
-print(s.upper())  # 輸出: HELLO
+print(f'9. {s}經過upper()方法:\t',s.upper())  # 輸出: HELLO
 
 # lower() - 將字串轉換成小寫
-print(s.lower())  # 輸出: hello
+print(f'10. {s}經過lower()方法:\t',s.lower())  # 輸出: hello
+
+#captialize() 句子第一個字大小
+print(f'{s}經過Capitalize()方法:\t',s.capitalize())
+#title() 首字大寫
+print(f'{s}經過title()方法:\t',s.title())
 
 # replace() - 替換字串中的指定字元
-print(s.replace("h", "g"))  # 輸出: gello，將 "h" 替換為 "g"
+print(f'{s} 將過replace()方法將h改成g:\t',s.replace("h", "g"))  # 輸出: gello，將 "h" 替換為 "g"
+
+
