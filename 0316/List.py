@@ -1,7 +1,8 @@
-'''
+"""
 List 串列
-'''
-from time import process_time_ns
+"""
+
+
 
 #宣告一個空間給l1
 #l1 =[]
@@ -35,7 +36,13 @@ print(l1.count('banana'))
 # index()
 print(l1.index('apple'))
 
-
+#append() 串列放入串列
+l1.append(['python','mysql'])
+print(l1)
+#extend() 拆開放入串列
+l1.extend(['python']) # 中括號內的會直接放入
+l1.extend('python') # 無加括號的會將引號內的可迭代的資料型態拆開放入串列中
+print(l1)
 
 
 
