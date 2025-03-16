@@ -73,6 +73,7 @@ g = r"C:\user\name\python"
 print(r"C:\user\name\python")
 print("C:\\user\\name\\python")
 
+
 #String index 字串索引值
 s = 'helloworld!!'
 #抓出第四個位置的字元(從0開始)
@@ -117,11 +118,31 @@ print(f'9. {s}經過upper()方法:\t',s.upper())  # 輸出: HELLO
 print(f'10. {s}經過lower()方法:\t',s.lower())  # 輸出: hello
 
 #captialize() 句子第一個字大小
+section= 'Captialize()方法'
+print(f'{section:=^20s}')
 print(f'{s}經過Capitalize()方法:\t',s.capitalize())
 #title() 首字大寫
+section= 'title()方法'
+print(f'{section:=^20s}')
 print(f'{s}經過title()方法:\t',s.title())
 
 # replace() - 替換字串中的指定字元
+section= 'replace()方法'
+print(f'{section:=^20s}')
 print(f'{s} 將過replace()方法將h改成g:\t',s.replace("h", "g"))  # 輸出: gello，將 "h" 替換為 "g"
 
+#split()
+section= 'Split()方法'
+print(f'{section:=^20s}')
 
+q =s.split('o')
+print(type(s))
+print(q)
+print(type(q))
+#strip() 刪除字串內不要的元素 EX:空格
+section= 'strip()方法'
+print(f'{section:=^20s}')
+s3 = '    hell    '
+print(s3.strip())
+print(s3.lstrip())
+print(s3.rsplit())
