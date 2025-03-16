@@ -66,3 +66,8 @@ print(f'3.f-string方式 Hello {name:=^10s} ! 今日天氣溫度 {deg:.2f}')
 #\n 換行 \t tab 空格定位
 
 print(f'Hello\t{name:=^10s}!\ne-mail:\t{email}')
+# 遇到需要顯示路徑的情況_有兩種解決方法
+g = r"C:\user\name\python"
+
+print(r"C:\user\name\python")
+print("C:\\user\\name\\python")
