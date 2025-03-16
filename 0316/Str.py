@@ -8,6 +8,7 @@
 %o=8進位
 %f=float (Python最初顯示方式）
 '''
+from itertools import count
 from time import process_time_ns
 
 a = 'Hello %s' # % + s 表示顯示時後面要插入的數值型態 s=str d=int(10進位Decimal） f=float (Python最初顯示方式）
@@ -71,3 +72,47 @@ g = r"C:\user\name\python"
 
 print(r"C:\user\name\python")
 print("C:\\user\\name\\python")
+
+#String index 字串索引值
+s = 'helloworld!!'
+#抓出第四個位置的字元(從0開始)
+print(s[5])
+#[起始位置:結束位置:間隔數字] 只能順向搜尋,無法反向搜尋
+print(s[1:5]) # 顯示第二到第四個字元
+print(s[::2])# 間隔兩個顯示
+print(s[-5:])# 從倒數第五個字元開始顯示
+print(s[:-1])# 起始未設定,# 倒數最後一個不顯示
+print(s[-5:-1]) # 由字串後取得子字串，起始值終止值都要是負數，而起始值要比終止值小
+
+# 定義字串變數
+s = 'hello'
+
+# len() - 取得字串長度
+print(len(s))  # 輸出: 5
+
+# count() - 計算特定字元在字串中出現的次數
+print(s.count("l"))  # 輸出: 2
+
+# index() - 找出特定字元的索引位置（從0開始計算）
+print(s.index("o"))  # 輸出: 4
+
+# isdigit() - 檢查字串是否只包含數字
+print(s.isdigit())  # 輸出: False，因為 "hello" 不是數字
+
+# isalpha() - 檢查字串是否只包含字母（不包含空格、數字或符號）
+print(s.isalpha())  # 輸出: True，因為 "hello" 只包含字母
+
+# endswith() - 檢查字串是否以指定的字元結尾
+print(s.endswith("o"))  # 輸出: True，"hello" 以 "o" 結尾
+
+# startswith() - 檢查字串是否以指定的字元開頭
+print(s.startswith("h"))  # 輸出: True，"hello" 以 "h" 開頭
+
+# upper() - 將字串轉換成大寫
+print(s.upper())  # 輸出: HELLO
+
+# lower() - 將字串轉換成小寫
+print(s.lower())  # 輸出: hello
+
+# replace() - 替換字串中的指定字元
+print(s.replace("h", "g"))  # 輸出: gello，將 "h" 替換為 "g"
