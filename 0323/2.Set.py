@@ -22,7 +22,7 @@ print(s3)
 s3.update(['宜蘭'])
 print(s3)
 
-
+#Set 集合
 se1 = {1,2,3,4,5}
 se2 = {4,5,6,7,8}
 print(f"se1{se1},se2:{se2}")
@@ -43,3 +43,5 @@ print(f'se1差集se2{difference_result}')
 symm_result = se1 ^ se2
 print(f'se1對稱差集se2:{symm_result}')
 
+#索引資料
+print(5 in se1)
