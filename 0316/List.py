@@ -61,4 +61,32 @@ print(l1)
 l1.clear() # 清空串列內所有值
 print(l1)
 
+#sort()
+l2 = [1,6,2,8,4]
+l3 = ['2','5','1','3']
+l4 = [1.2,9,5.2]
+l4.sort() #升幕排列
+l2.sort(reverse=True) #降幕排列
 
+print(f'由大到小顯示:\t{l2}\n由小到大顯示：\t{l4}')
+
+#拷貝
+
+# copy()
+# c1 = [1,2,3,4]
+# c2 = c1.copy()
+# c3 = c1
+# c1[0] = 'A'
+# c2[0] = 'A'
+
+import copy
+c1 = [1,2,[3,4]]
+# c2 = c1.copy()
+c2 = copy.deepcopy(c1)
+c3 = c1
+c1[0] = 'Q'
+c1[2][0] = 'A'
+
+print(c1)
+print(c2)
+print(c3)

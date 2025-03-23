@@ -1,3 +1,5 @@
+from itertools import count
+from operator import index
 from time import process_time_ns
 
 t1 = tuple()
@@ -15,5 +17,8 @@ t4 = t2 + t3
 print(t4)
 # 當加入資料為字串後面需增加一個,
 t4 +=('apple',)
-
 print(t4)
+
+print(len(t4))
+print(t4.count(123))
+print(index(0))
