@@ -30,5 +30,7 @@ while True:
     elif int(selected) > len(menu):
         print('請重新輸入編號')
         continue
+    #print(menu[int(selected)-1])
     elif menu[int(selected)-1] is menu:
         cart.append(menu[int(selected)-1])
+    print(cart)
