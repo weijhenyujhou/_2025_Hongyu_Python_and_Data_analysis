@@ -27,11 +27,11 @@ while True:
     selected = input('請輸入編號(enter "q"完成輸入)').lower()
     if selected == 'q':
         break
-    elif int(selected) > len(menu):
+    elif int(selected) > len(menu): #輸入編號超出菜單編號
         print('請重新輸入編號')
         continue
     #print(menu[int(selected)-1])
-    elif menu[int(selected)-1] in menu:
+    elif menu[int(selected)-1] in menu: #  判斷輸入的編號在不在菜單內
         cart.append(menu[int(selected)-1])
 print(cart)
 
