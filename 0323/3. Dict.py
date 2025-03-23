@@ -49,6 +49,7 @@ user1 = {
 # print(user1.values())
 # print(user1.items())
 
+#使用巢狀迴圈列出dict內多比資料
 for user in user:
     for key,value in user.items():
         print(f'{key}:{value}')
