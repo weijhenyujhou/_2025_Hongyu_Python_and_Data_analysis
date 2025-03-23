@@ -31,6 +31,11 @@ while True:
         print('請重新輸入編號')
         continue
     #print(menu[int(selected)-1])
-    elif menu[int(selected)-1] is menu:
+    elif menu[int(selected)-1] in menu:
         cart.append(menu[int(selected)-1])
-    print(cart)
+print(cart)
+
+for item in cart:
+    print(f'{item['name']}')
+    total +=item['price']
+print(f'總訂購金額:{total}')
