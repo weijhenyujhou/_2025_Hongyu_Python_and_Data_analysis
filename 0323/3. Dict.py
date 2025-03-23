@@ -85,8 +85,10 @@ user3 = {
 user1.update(user3)
 print(f'新增active建值後:{user1}')
 print("_"*30)
-#新增一筆
-
+#新增一筆資了到dict user內
+user.append(user2)
+for u in user:
+    print(u)
 #多個字典結合的寫法
 user1 = {**user1,**user2,**user3}
 print(f'多個字典結合建值後:{user1}')
