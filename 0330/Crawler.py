@@ -13,24 +13,44 @@ import bs4
 root =bs4.BeautifulSoup(data, 'html.parser')
 #print(root)
 #找出所有
-print('=====爬出第一個標題====')
-title = root.find('div',class_='title')
-print(title.a.string)
+# print('=====爬出第一個標題====')
+# title = root.find('div',class_='title')
+# print(title.a.string)
+#
+# # for a_tag in root.find_all('a', class_='right small'):
+# #     print(a_tag.string)
+#
+# print('=====爬出所有標題====')
+# titles = root.find_all('div',class_='title')
+# for title in titles:
+#     print(title.a.string)
+#
+# print('=====爬出所有日期====')
+# dates = root.find_all('div',class_='date')
+# for date in dates:
+#     print(date.a.string)
+#
+# print('=====爬出所有評論值====')
+# spans = root.find_all('span',class_='hl')
+# for span in spans:
+#     print(span.string)
 
-# for a_tag in root.find_all('a', class_='right small'):
-#     print(a_tag.string)
 
-print('=====爬出所有標題====')
-titles = root.find_all('div',class_='title')
-for title in titles:
-    print(title.a.string)
+items = root.find_all('div',class_='r-ent')
+for item in items:
+    title = item.find('div',class_='title')
+    date = item.find('div',class_='date')
+    span = item.find('span',class_='hl')
+    author = item.find('div',class_='author')
 
-print('=====爬出所有日期====')
-dates = root.find_all('div',class_='date')
-for date in dates:
-    print(date.a.string)
+    if span is None:
+        span ='0'
 
-print('=====爬出所有評論值====')
-spans = root.find_all('span',class_='hl')
-for span in spans:
-    print(span.string)
+    else:
+        span = span.string
+
+    if title.a is None:
+        title ='本文已刪除'
+    else:
+        title = title.a.string
+    print(f'熱度：{span}/標題：{title:40}/日期：{date.string:20}------作者：{author.string:20}')
