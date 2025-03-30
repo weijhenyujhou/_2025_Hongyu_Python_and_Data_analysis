@@ -42,15 +42,15 @@ for item in items:
     date = item.find('div',class_='date')
     span = item.find('span',class_='hl')
     author = item.find('div',class_='author')
-
+    # 加入判斷條件文章已被刪除
+    if title.a is None:
+        title = '本文已刪除'
+    else:
+        title = title.a.string
+    #避免遇到文章熱度為空值
     if span is None:
         span ='0'
 
     else:
         span = span.string
-
-    if title.a is None:
-        title ='本文已刪除'
-    else:
-        title = title.a.string
     print(f'熱度：{span}/標題：{title:40}/日期：{date.string:20}------作者：{author.string:20}')

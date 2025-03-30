@@ -39,3 +39,14 @@ print('===== 爬出所有評論值 =====')
 spans = root.find_all('span', class_='hl')
 for span in spans:
     print(span.get_text(strip=True))  # 避免 None
+
+#抓出網頁內的值
+
+for item in root.find_all('div', class_='r-ent'):
+    title = item.find('div', class_='title')
+    date = item.find('div', class_='date')
+    span = item.find('span', class_='hl')
+    author = item.find('div', class_='author')
+
+    title_text = title.a.string.strip() if title.a else "本文已刪除"
+    print(f'熱度：{span.string.strip() if span else "0":<4} | 標題：{title_text[:40]:40} | 日期：{date.get_text(strip=True) if date else "未知"} | 作者：{author.get_text(strip=True) if author else "未知"}')
