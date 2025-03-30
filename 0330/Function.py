@@ -1,12 +1,33 @@
+'''宣告方式
+def functionName():
+    函式內容
+
+回傳值類型
+return 將計算後的值回傳函式
+
+'''
+    
+
 
 def foo():
-    x =100
+    x = 100
     y = 1.2
-    result = x * y
-    print(result)
+    return x * y
+print(foo())
 
+# return 需要將結果回傳函式時使用return,如果只是要單傳顯示不要記錄功能的數值可以只用print
 def area(w,h):
-    print(w * h)
+    #print(w * h)
+    return w * h
+#result = area(100,2)
+print(area(100,2))
+print(area(100,4))
+print(area(200,2))
 
-area(100,2)
+# Default Argument
 
+def jp_to_tw(Doller,rate):
+    return Doller * rate
+
+print(f'不按照韓式變數宣告順序給變數(Rate,Doller)：{jp_to_tw(rate=0.23,Doller=10000)}')
+print(f'按照函式變數宣告順序給變數(Doller, Rate)：{jp_to_tw(10000,0.23)}')
