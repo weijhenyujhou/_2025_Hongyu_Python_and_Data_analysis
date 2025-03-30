@@ -6,6 +6,9 @@ def functionName():
 return 將計算後的值回傳函式
 pass
 '''
+from time import process_time_ns
+
+
 def foo():
     x = 100
     y = 1.2
@@ -29,12 +32,19 @@ print(f'不按照韓式變數宣告順序給變數(Rate,Doller)：{jp_to_tw(rate
 print(f'按照函式變數宣告順序給變數(Doller, Rate)：{jp_to_tw(10000,0.23)}')
 
 #倒數計時器功能
-s = int(input('請輸入秒數'))
-import time
-def count(end,start=0,):#有預設值時該變數一率放最後面
-    for x in range(end, start,-1): #range(5,1,-1) 由大到小顯示數值
-        print(x)
-        time.sleep(1)
-    print('Finish')
+# s = int(input('請輸入秒數'))
+# import time
+# def count(end,start=0,):#有預設值時該變數一率放最後面
+#     for x in range(end, start,-1): #range(5,1,-1) 由大到小顯示數值
+#         print(x)
+#         time.sleep(1)
+#     print('Finish')
+#
+# count(s)
 
-count(s)
+#
+def greeting(first,last):
+    print(f'Hello, {first}, {last}')
+
+greeting(last='Mary',first='Chen')
+greeting('Lin','John')
