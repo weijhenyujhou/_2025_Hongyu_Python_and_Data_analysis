@@ -1,5 +1,7 @@
-
 import  requests
+import urllib.request as req
+import ssl
+import json # 需要額外導入jason套件
 def request_get(url):
     header = {
         'User-Agent':'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'
@@ -7,15 +9,19 @@ def request_get(url):
 
     # url = 'https://www.kkday.com/zh-tw/theme/ajax_get_vtag_prod_info?prodcat=CATEGORY_079&sort=prec&page=2&apiKey=food'
 
-    data = requests.get(url,headers= header)
-    data = data.json()
+    data = requests.get(url,headers= header,verify=False)
+    datas = data.json()
 
-    # import bs4
-    #
-    # root = bs4.BeautifulSoup(data, 'html.parser')
-    # items = root.find_all('div', class_='product-detail')
-
-    print(data)
+    # #第一步：抓取的資料存入json檔 開啟>寫入
+    # with open('kkday.json','w',encoding='utf-8') as file:
+    #     file.write(datas)
+    # #第二部：抓取需要的資料欄位名稱 旅遊名稱, 旅遊價格
+    # for data in datas['data']:
+    #     print(f'=={data['name']}:NT${data['price']}')
+    #第三部：將爬出的資料放入檔案內存檔
+    with open('kkday_txt.txt', 'w', encoding='utf-8') as file:
+        for data in datas['data']:
+            file.write(f'{data['name']}:NT${data['price']}\n')
 
 
 #url = 'https://www.kkday.com/zh-tw/theme/ajax_get_vtag_prod_info?prodcat=CATEGORY_079&sort=prec&page=3&apiKey=food'
@@ -45,18 +51,12 @@ def llib_get(url):
         result = response.read().decode('utf-8')
 
     datas = json.loads(result)
-    print(datas['data'])
-    for data in datas['data']:
-        print(f'{data['name']}:{data['price']}')
-
-    with open('kkday.json','w',encoding='utf8') as file:
-        file.write(datas)
 
 
 
 url ='https://www.kkday.com/zh-tw/category/ajax_product_list?keyword=&currency=TWD&sort=prec&page=1&start=0&count=10&destination=&availstartdate=&availenddate=&prodcat=CATEGORY_020%2CCATEGORY_023%2CCATEGORY_022%2CCATEGORY_025%2CCATEGORY_030%2CCATEGORY_028%2CCATEGORY_021%2CCATEGORY_026%2CCATEGORY_029%2CCATEGORY_024%2CCATEGORY_027&ave_score_from=&locations=&time=&glang=&row=10&fprice=*&eprice=*&immediately_use=0&sale_status=0&departure=&arrival=&travel_type=&rewrite=1&csrf_token_name=14faccbd1ae923f392b3d9dac1572866'
 
 #使用llib crawler
-llib_get(url)
+#llib_get(url)
 #使用request crawler
-#request_get(url)
+request_get(url)
