@@ -5,7 +5,7 @@ def getdata(url):
         'User-Agent':'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'
     }
 
-    url = 'https://www.kkday.com/zh-tw/theme/ajax_get_vtag_prod_info?prodcat=CATEGORY_079&sort=prec&page=2&apiKey=food'
+    # url = 'https://www.kkday.com/zh-tw/theme/ajax_get_vtag_prod_info?prodcat=CATEGORY_079&sort=prec&page=2&apiKey=food'
 
     data = requests.get(url,headers= header)
     data = data.json()
@@ -17,11 +17,16 @@ def getdata(url):
 
     print(data)
 
-url = 'https://www.kkday.com/zh-tw/theme/ajax_get_vtag_prod_info?prodcat=CATEGORY_079&sort=prec&page=2&apiKey=food'
 
-count = 0
-while count < 4:
-    print(f"以下為第{count+1}頁得內容")
-    pageURL = 'https://www.kkday.com' + getdata(url)
-    count += 1
-print("--------網頁爬蟲結束--------")
+url = 'https://www.kkday.com/zh-tw/theme/ajax_get_vtag_prod_info?prodcat=CATEGORY_079&sort=prec&page=3&apiKey=food'
+getdata(url)
+
+
+# url = 'https://www.kkday.com/zh-tw/theme/ajax_get_vtag_prod_info?prodcat=CATEGORY_079&sort=prec&page=2&apiKey=food'
+#
+# count = 0
+# while count < 4:
+#     print(f"以下為第{count+1}頁得內容")
+#     pageURL = 'https://www.kkday.com' + getdata(url)
+#     count += 1
+# print("--------網頁爬蟲結束--------")
