@@ -30,4 +30,21 @@ data = data.text
 import bs4
 root =bs4.BeautifulSoup(data, 'html.parser')
 items = root.find_all('div', class_='r-ent')
-print(items)
+for item in items:
+    title = item.find('div', class_='title')
+    date = item.find('div', class_='date')
+    span = item.find('span', class_='hl')
+    author = item.find('div', class_='author')
+    # 加入判斷條件文章已被刪除
+    if title.a is None:
+        title = '本文已刪除'
+    else:
+        title = title.a.string
+    # 避免遇到文章熱度為空值
+    if span is None:
+        span = '0'
+
+    else:
+        span = span.string
+    print(f'熱度：{span:<4}/標題：{title:40}/日期：{date.string:20}------作者：{author.string:20}')
+# print(items)
