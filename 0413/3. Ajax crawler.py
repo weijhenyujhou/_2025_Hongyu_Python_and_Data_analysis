@@ -1,16 +1,13 @@
-#
-# import  requests
-# import urllib.request as req
-# import ssl
-# import json # 需要額外導入jason套件
-# def request_get(url):
-#     header = {
+
+import  requests
+import urllib.request as req
+import ssl
+import json # 需要額外導入jason套件
+
+# header = {
 #         'User-Agent':'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'
 #     }
-#
-#     # url = 'https://www.kkday.com/zh-tw/theme/ajax_get_vtag_prod_info?prodcat=CATEGORY_079&sort=prec&page=2&apiKey=food'
-#
-#     data = requests.get(url,headers= header,verify=False)
+#     data = requests.get(url, headers=header, verify=False)
 #     datas = data.json()
 #
 #     # #第一步：抓取的資料存入json檔 開啟>寫入
@@ -70,10 +67,6 @@ from Reuqest import request_get
 #     url = url + str(i+1)
 
 url = ('https://www.kkday.com/zh-tw/category/ajax_product_list?keyword=&currency=TWD&sort=prec&start=0&count=10&destination=&availstartdate=&availenddate=&prodcat=CATEGORY_020%2CCATEGORY_023%2CCATEGORY_022%2CCATEGORY_025%2CCATEGORY_030%2CCATEGORY_028%2CCATEGORY_021%2CCATEGORY_026%2CCATEGORY_029%2CCATEGORY_024%2CCATEGORY_027&ave_score_from=&locations=&time=&glang=&row=10&fprice=*&eprice=*&immediately_use=0&sale_status=0&departure=&arrival=&travel_type=&rewrite=1&csrf_token_name=6febb77a6695c7dba8e9892287bfed1d&page=')
-#Urllib_get(url,2)
+Urllib_get(url,2)
 request_get(url,2)
-#使用llib crawler
-#llib_get(url)
-#使用request crawler
-#request_get(url)
 

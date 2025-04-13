@@ -17,7 +17,7 @@ def Urllib_get(url,pages):
 
         data_json = json.loads(result)
 
-        with open('Urllib_.txt','a',encoding='utf-8')as file:
+        with open('Urllib_get.txt','a',encoding='utf-8')as file:
             file.write(f'---------第{i+1}頁開始---------\n')
             for d in data_json['data']:
                 # print(d['name'])
