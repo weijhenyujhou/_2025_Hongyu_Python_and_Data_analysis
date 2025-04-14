@@ -1,5 +1,5 @@
 
-import  requests
+import requests
 import urllib.request as req
 import ssl
 import json # 需要額外導入jason套件
