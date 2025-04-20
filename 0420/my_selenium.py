@@ -1,10 +1,10 @@
-from charset_normalizer.cli import cli_detect
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 import time
+
 driver = webdriver.Chrome()
-url ='https://www.books.com.tw/' # 博客來
+url ='https://www.books.com.tw/?loc=tw_logo_001' # 博客來
 driver.get(url)
 time.sleep(2)
 # driver.save_screenshot('screenshot.jpg')
