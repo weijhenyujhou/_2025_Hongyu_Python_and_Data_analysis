@@ -19,7 +19,7 @@ def Urllib_get(url,pages):
 
         with open('Urllib_get.txt','a',encoding='utf-8')as file:
             file.write(f'---------第{i+1}頁開始---------\n')
-            for d in data_json['data']:
+            for data in data_json['data']:
                 # print(d['name'])
-                file.write(f'{d['name']}:{d['price']}\n')
+                file.write(f"{data['name']}:{data['price']}\n")
             file.write(f'---------第{i+1}頁結束-----------\n')
