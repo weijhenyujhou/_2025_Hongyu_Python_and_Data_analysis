@@ -1,24 +1,38 @@
 from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.chrome.options import Options
+from bs4 import BeautifulSoup
 import time
 
-# 開啟網站
-driver = webdriver.Chrome()
-driver.get("https://www.uniqlo.com/tw/zh_TW/men.html")
+# 設定 Chrome 啟動選項
+options = Options()
+options.add_argument("--headless")  # 無頭模式
+options.add_argument("--no-sandbox")
+options.add_argument("--disable-dev-shm-usage")
 
-# 點擊搜尋 icon（右上放大鏡）
-search_icon = WebDriverWait(driver, 10).until(
-    EC.element_to_be_clickable((By.CSS_SELECTOR, ".icon.icon-search-grey"))
-)
-search_icon.click()
+# 這邊根據你的系統調整 chromedriver 路徑
+service = Service("/usr/local/bin/chromedriver")
 
-# 等待輸入框出現
-search_input = WebDriverWait(driver, 10).until(
-    EC.presence_of_element_located((By.CSS_SELECTOR, 'input[type="text"][placeholder="請輸入關鍵字"]'))
-)
+# 啟動 driver
+driver = webdriver.Chrome(service=service, options=options)
 
-# 輸入關鍵字並送出
-search_input.send_keys("airism")
-search_input.submit()  # 或用 Keys.ENTER
+# UNIQLO 男裝短踢頁面
+url = "https://www.uniqlo.com/jp/ja/men/tops/t-shirts"
+driver.get(url)
+
+# 等 JavaScript 載入（可視情況調整等待時間）
+time.sleep(5)
+
+# 取得渲染後的 HTML
+soup = BeautifulSoup(driver.page_source, "html.parser")
+
+# 抓商品區塊
+products = soup.select("a[data-test='product-card-link']")
+
+# 印出商品名稱與連結
+for product in products:
+    title = product.get("aria-label") or product.get_text(strip=True)
+    link = "https://www.uniqlo.com" + product.get("href")
+    print(f"{title} - {link}")
+
+driver.quit()

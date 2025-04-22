@@ -13,17 +13,17 @@ import time
 # title = ['產品名稱', '價格']
 # ws.append(title)
 
-url_nike='https://www.uniqlo.com/tw/zh_TW/'
-driver = webdriver.Safari()
+url_nike = 'https://www.uniqlo.com/tw/zh_TW/'
+driver = webdriver.Chrome()
 driver.get(url_nike)
 time.sleep(3)
 
-#點選搜尋按鈕
-search_button = driver.find_element(By.CSS_SELECTOR,'.icon.icon-search')
+# 點選搜尋按鈕
+search_button = driver.find_element(By.CSS_SELECTOR, '.icon.icon-search')
 search_button.click()
 time.sleep(5)
 
-search_input = driver.find_element(By.CLASS_NAME,'text')
+search_input = driver.find_element(By.CLASS_NAME, 'text')
 search_input.send_keys('airism')
 search_input.send_keys(Keys.ENTER)
 time.sleep(5)
@@ -38,4 +38,3 @@ time.sleep(5)
 #     ws.append(items)
 #     #print(f'{title}:{price}')
 # wb.save('Nikeproducts.xlsx')
-
