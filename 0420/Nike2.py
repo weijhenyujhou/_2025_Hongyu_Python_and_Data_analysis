@@ -14,7 +14,7 @@ title = ['產品名稱', '價格']
 ws.append(title)
 
 url_nike='https://www.nike.com/tw/'
-driver = webdriver.Chrome()
+driver = webdriver.Safari()
 driver.get(url_nike)
 # 機器人自動選取進入男款>鞋款頁面抓取資料
 link = driver.find_element(By.LINK_TEXT,'男款')
