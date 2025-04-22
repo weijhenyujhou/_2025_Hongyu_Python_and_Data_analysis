@@ -21,9 +21,9 @@ time.sleep(3)
 #點選搜尋按鈕
 search_button = driver.find_element(By.CSS_SELECTOR,'.icon.icon-search')
 search_button.click()
-time.sleep(2)
+time.sleep(5)
 
-search_input = driver.find_element(By.CSS_SELECTOR,'.text')
+search_input = driver.find_element(By.CLASS_NAME,'text')
 search_input.send_keys('airism')
 search_input.send_keys(Keys.ENTER)
 time.sleep(5)
