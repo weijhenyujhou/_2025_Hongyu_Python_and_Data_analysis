@@ -28,3 +28,5 @@ for img in imgs:
     with open(f'images/{i}.jpg','wb') as f:
         f.write(img_source)
     i +=1
+
+    #git push test by terminal
