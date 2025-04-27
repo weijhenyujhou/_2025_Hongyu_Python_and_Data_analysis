@@ -23,11 +23,10 @@ search_button = driver.find_element(By.CSS_SELECTOR,'.icon.icon-search')
 search_button.click()
 time.sleep(5)
 
-search_input = driver.find_element(By.CSS_SELECTOR, "")  # 通常搜尋欄會有 name="q"
-search_input.send_keys("airsim")
-search_input.send_keys(Keys.RETURN)
-time.sleep(3)
-
+search_input = driver.find_element(By.CLASS_NAME,'text')
+search_input.send_keys('airism')
+search_input.send_keys(Keys.ENTER)
+time.sleep(5)
 
 # info = driver.find_elements(By.CLASS_NAME,'product-card__info')
 #
