@@ -8,9 +8,19 @@ url_books = 'https://www.books.com.tw'
 url_momo ='https://www.momoshop.com.tw/main/Main.jsp'
 drive = webdriver.Safari()
 
-drive.get(url_momo)
+drive.get(url_nike)
 htmlfile = drive.page_source
 
 soup = BeautifulSoup(htmlfile,'html.parser')
+#data-landscape-url
 imgs = soup.find_all('img')
-print(imgs)
+i=1
+for img in imgs:
+    path = img['data-landscape-url']
+    source = requests.get(path)
+    img_source = source.content
+    os.makedirs('images',exist_ok=True)
+
+    with open(f'images/{i}.jpg','wb') as f:
+        f.write(img_source)
+    i +=1
