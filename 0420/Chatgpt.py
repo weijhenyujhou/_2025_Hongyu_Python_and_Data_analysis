@@ -1,24 +1,40 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.chrome.service import Service
+#from webdriver_manager.chrome import ChromeDriverManager
 import time
 
-# 開啟網站
-driver = webdriver.Chrome()
-driver.get("https://www.uniqlo.com/tw/zh_TW/men.html")
+# 啟動瀏覽器
+options = webdriver.ChromeOptions()
+options.add_argument('--start-maximized')  # 視窗最大化
+driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
 
-# 點擊搜尋 icon（右上放大鏡）
-search_icon = WebDriverWait(driver, 10).until(
-    EC.element_to_be_clickable((By.CSS_SELECTOR, ".icon.icon-search-grey"))
-)
+# 前往 UNIQLO 台灣網站（可改成你想爬的地區）
+driver.get("https://www.uniqlo.com/tw/")
+
+# 找到搜尋按鈕（通常在右上角）
+search_icon = driver.find_element(By.CLASS_NAME, "header-search--icon")
 search_icon.click()
+time.sleep(1)
 
-# 等待輸入框出現
-search_input = WebDriverWait(driver, 10).until(
-    EC.presence_of_element_located((By.CSS_SELECTOR, 'input[type="text"][placeholder="請輸入關鍵字"]'))
-)
+# 找到搜尋輸入框並輸入關鍵字 "airsim"
+search_input = driver.find_element(By.NAME, "q")  # 通常搜尋欄會有 name="q"
+search_input.send_keys("airsim")
+search_input.send_keys(Keys.RETURN)
+time.sleep(3)  # 等待網頁載入搜尋結果
 
-# 輸入關鍵字並送出
-search_input.send_keys("airism")
-search_input.submit()  # 或用 Keys.ENTER
+# 抓取搜尋結果（根據實際網頁結構調整）
+product_elements = driver.find_elements(By.CLASS_NAME, "product-item__name")
+
+print("搜尋結果：")
+for product in product_elements:
+    try:
+        title = product.text
+        link = product.find_element(By.XPATH, "..").get_attribute("href")
+        print(f"{title} - {link}")
+    except:
+        continue
+
+# 關閉瀏覽器
+driver.quit()

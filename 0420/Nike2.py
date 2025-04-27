@@ -17,6 +17,9 @@ url_nike='https://www.nike.com/tw/'
 driver = webdriver.Safari()
 driver.get(url_nike)
 # 機器人自動選取進入男款>鞋款頁面抓取資料
+#將機器人開啟網頁時對大化畫面，避免要點選的資料名有顯示造成程式錯誤
+driver.maximize_window()
+time.sleep(3)
 link = driver.find_element(By.LINK_TEXT,'男款')
 link.click()
 
