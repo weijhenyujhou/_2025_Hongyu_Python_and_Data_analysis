@@ -1,6 +1,7 @@
 import pandas as pd
+import matplotlib.pyplot as plt
 
-
+plt.rc('font',family='LIHEI PRO')
 data = pd.Series([10,20,22,7,68,55]) #一維資料為Series
 data2 = pd.DataFrame( #二維資料為DataFrame
     [
