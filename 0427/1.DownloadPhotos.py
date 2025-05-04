@@ -9,7 +9,7 @@ url_momo ='https://www.momoshop.com.tw/main/Main.jsp'
 url_uniqlo = 'https://www.uniqlo.com/tw/zh_TW/c/all_men-tops.html'
 drive = webdriver.Safari()
 
-drive.get(url_uniqlo)
+drive.get(url_nike)
 htmlfile = drive.page_source
 
 soup = BeautifulSoup(htmlfile,'html.parser')
