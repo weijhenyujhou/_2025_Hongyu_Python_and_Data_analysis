@@ -6,7 +6,7 @@ travel_data = pd.read_csv('Travel_Data.csv')
 #第二列開始才是資料
 data = travel_data.iloc[1]
 
-#年份跟歐洲地區還有小計欄位都丟掉
+#年份,歐洲地區,小計欄位都篩掉
 Pie_data = data.drop(["年別","歐洲地區","小計"])
 print(Pie_data)
 
@@ -18,6 +18,7 @@ print(Pie_data)
 #
 # )
 # plt.show()
+plt.figure(figsize=(10, 6))
 plt.pie(Pie_data.values,
         labels=Pie_data.index,
         autopct='%1.1f%%',
@@ -27,6 +28,6 @@ plt.pie(Pie_data.values,
         )
 
 plt.title("各歐洲國家旅遊人數比例")
-
+plt.legend(loc='lower right')
 plt.show()
 
