@@ -10,6 +10,9 @@ data = travel_data.iloc[1]
 Pie_data = data.drop(["年別","歐洲地區","小計"])
 print(Pie_data)
 
+#其他地區
+
+
 # plt.pie(Pie_data.values,
 #         labels =Pie_data.index,
 #         autopct='%.2f%%',
