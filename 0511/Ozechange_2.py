@@ -67,4 +67,3 @@ button.clicked.connect(oz)
 widget.show()
 
 sys.exit(app.exec())
-
