@@ -21,22 +21,21 @@ widget = QtWidgets.QWidget()
 widget.setWindowTitle("Ozexchange")
 
 
-#Label
+#Label 需要兩個
 label1 = QtWidgets.QLabel(widget)
 label1.setText('輸入轉換金額')
 label2 = QtWidgets.QLabel(widget)
 label2.setText('選擇要轉換的單位')
-#input
-
+#input 需要兩個
 input1 = QtWidgets.QLineEdit(widget)
 input2 = QtWidgets.QComboBox(widget)
 input2.addItems(['o','m'])
 
-#button
+#button 需要一個
 button = QtWidgets.QPushButton("exchange", widget)
 
 
-#showlabel
+#showlabel 需要一個
 showlabel = QtWidgets.QLabel(widget)
 
 grid = QtWidgets.QGridLayout(widget)
