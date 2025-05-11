@@ -55,12 +55,12 @@ def oz():
         result = float(x) * 29.573
         result = str(round(result,2))
         print(f'您的換算結果為{x}oz約{result}ml')
-        showlabel.setText(f'您的換算結果為{x}oz約{result}ml')
+        showlabel.setText(f'您的換算結果為:{x}oz約為：{result}ml')
     else:
         result = float(x) / 29.573
         result = str(round(result,2))
         print(f'您的換算結果為{x}ml約{result}oz')
-        showlabel.setText(f'您的換算結果為{x}ml約{result}oz')
+        showlabel.setText(f'您的換算結果為:{x}ml約為：{result}oz')
 
 button.clicked.connect(oz)
 
